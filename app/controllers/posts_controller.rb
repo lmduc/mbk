@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path, success: I18n.t('flash.post.create.successfully')
+      redirect_to root_path, flash: { success: I18n.t('flash.post.create.successfully') }
     else
       flash.now[:danger] = I18n.t('flash.post.create.failed')
       render :new
