@@ -1,0 +1,13 @@
+vi:
+  page:
+    post:
+      title: "Cảm nhận"
+  form:
+    post:
+      title: "Tiêu đề (không bắt buộc)"
+      body: "Nội dung"
+  flash:
+    post:
+      create:
+        successfully: "Tạo bài viết thành công"
+        failed: "Tạo bài viết không thành công. Vui lòng kiểm tra lại"
