@@ -31,6 +31,8 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'validate_url'
+
 group :development, :test do
   gem 'byebug'
   gem 'pry'
