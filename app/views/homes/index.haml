@@ -1,1 +1,6 @@
-Hello
+.list-book
+  .row
+    - @books.each do |book|
+      .col-md-2
+        %img{ src: book.image_url }
+        %h4.title= book.title
