@@ -1,12 +1,28 @@
-.h1= I18n.t('page.post.title')
-= form_for @post do |f|
-  = f.fields_for :book do |field|
+.h1.text-center= I18n.t('page.post.title')
+.push-20px
+
+.col-md-6
+  = form_for @post do |f|
+    = f.fields_for :book do |field|
+      .form-group
+        = field.text_field :title, class: "form-control", placeholder: I18n.t('form.book.title')
+      .form-group
+        = field.text_field :image_url, class: "form-control", placeholder: I18n.t('form.book.image_url')
     .form-group
-      = field.text_field :title, class: "form-control", placeholder: I18n.t('form.book.title')
+      = f.text_field :title, class: "form-control", placeholder: I18n.t('form.post.title')
     .form-group
-      = field.text_field :image_url, class: "form-control", placeholder: I18n.t('form.book.image_url')
-  .form-group
-    = f.text_field :title, class: "form-control", placeholder: I18n.t('form.post.title')
-  .form-group
-    = f.text_area :body, class: "form-control", rows: 10, placeholder: I18n.t('form.post.body')
-  = f.submit "Create", class: "btn btn-info"
+      = f.text_area :body, class: "form-control", rows: 10, placeholder: I18n.t('form.post.body')
+    .form-group
+      = link_to I18n.t('page.markdown_url'), 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet', target: '_blank'
+    = f.submit "Create", class: "btn btn-info"
+
+.col-md-6
+  #viewer
+
+:javascript
+  $(function() {
+    $('#post_body').on('keyup', function() {
+      var htmlContent = $('#post_body').val();
+      $('#viewer').html(markdown.toHTML(htmlContent));
+    })
+  })
