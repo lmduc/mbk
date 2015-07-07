@@ -1,6 +1,7 @@
 .list-book
   .row
-    - @books.each do |book|
-      .col-md-2
-        %img{ src: book.image_url }
-        %h4.title= book.title
+    - @posts.each do |post|
+      = link_to post_path(post) do
+        .col-md-2
+          %img{ src: post.book.image_url }
+          %h4.title= post.book.title

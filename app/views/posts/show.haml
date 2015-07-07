@@ -1,0 +1,16 @@
+.h1.text-center= @book.title
+.push-20px
+
+.col-md-4
+  %img.width-100per.height-100per{ src: @book.image_url }
+
+.col-md-8
+  %h3= @post.title
+  %textarea#post_body.hidden= @post.body
+  #viewer
+
+:javascript
+  $(function() {
+    var htmlContent = $('#post_body').text();
+    $('#viewer').html(markdown.toHTML(htmlContent));
+  })
