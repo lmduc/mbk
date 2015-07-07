@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require markdown.min
 //= require_tree .
