@@ -6,6 +6,9 @@ vi:
     post:
       title: "Tiêu đề (không bắt buộc)"
       body: "Nội dung"
+    book:
+      title: "Tựa sách"
+      image_url: "Hình ảnh bìa sách"
   flash:
     post:
       create:

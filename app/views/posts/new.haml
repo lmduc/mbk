@@ -1,5 +1,10 @@
 .h1= I18n.t('page.post.title')
 = form_for @post do |f|
+  = f.fields_for :book do |field|
+    .form-group
+      = field.text_field :title, class: "form-control", placeholder: I18n.t('form.book.title')
+    .form-group
+      = field.text_field :image_url, class: "form-control", placeholder: I18n.t('form.book.image_url')
   .form-group
     = f.text_field :title, class: "form-control", placeholder: I18n.t('form.post.title')
   .form-group
